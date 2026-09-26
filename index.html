@@ -47,10 +47,62 @@ ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px
 .badge span{font-size:12px;color:#a9aec6}
 .badge.lock{opacity:.5}
 .badge.lock .ic{background:#1c2135;border-color:#3a4270;color:#8b91ab}
-@media (max-width:800px){main{grid-template-columns:1fr}}
+.hero{max-width:1100px;margin:0 auto;padding:32px 24px 0;display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center}
+.hero h1{margin:0 0 12px;font-family:Unbounded,sans-serif;font-size:30px;line-height:1.25}
+.hero h1 em{font-style:normal;color:#f2c14e}
+.hero p{margin:0 0 18px;font-size:16px;line-height:1.55;color:#c3c7da}
+.steps{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.steps div{display:flex;gap:12px;align-items:center;font-size:15px}
+.steps b{width:28px;height:28px;flex-shrink:0;border-radius:50%;background:#1c2f40;color:#8fdcff;display:flex;align-items:center;justify-content:center}
+.want{display:inline-block;padding:14px 22px;border-radius:10px;background:#8fdcff;color:#06202c;font-weight:800;text-decoration:none}
+.want:hover{background:#c7efff}
+.scene{position:relative;height:300px;border-radius:16px;overflow:hidden;background:linear-gradient(#1a2446,#2a3a66 70%,#34497a);border:1px solid #232840}
+.win{position:absolute;left:28px;top:26px;width:58%;height:150px;border-radius:10px;background:#0f1324cc;border:1px solid #3a4270}
+.win:before{content:"";position:absolute;left:0;right:0;top:0;height:22px;border-radius:10px 10px 0 0;background:#1c2135}
+.win i{position:absolute;left:16px;height:8px;border-radius:4px;background:#2a3050}
+.bar2{position:absolute;left:0;right:0;bottom:0;height:44px;background:#0b0d17;border-top:1px solid #232840}
+.pet{position:absolute;bottom:44px;left:4%;width:86px;height:86px;animation:walk 9s ease-in-out infinite}
+.pet img{width:86px;height:86px;animation:bob .45s ease-in-out infinite alternate}
+.mark{position:absolute;left:96px;top:0;font:800 30px Unbounded,sans-serif;color:#f2c14e;opacity:0;animation:mark 9s infinite}
+.bubble{position:absolute;left:-40px;top:-78px;width:190px;padding:8px 12px;border-radius:10px;background:#f7f3e6;color:#1a1405;font-weight:800;font-size:13px;opacity:0;animation:bub 9s infinite}
+.done{position:absolute;right:26px;top:40px;width:190px;padding:12px 14px;border-radius:12px;background:#121629;border:1px solid #2f5a40;opacity:0;animation:done 9s infinite}
+.done b{display:block;color:#6fd98f;font-size:14px}
+.done span{font-size:12px;color:#a9aec6}
+.xpb{height:8px;margin-top:8px;border-radius:4px;background:#1c2135;overflow:hidden}
+.xpb div{height:100%;background:#f2c14e;width:40%;animation:xp 9s infinite}
+.plus{position:absolute;right:60px;top:150px;font-weight:800;color:#f2c14e;opacity:0;animation:plus 9s infinite}
+@keyframes walk{0%{transform:translateX(0)}35%,100%{transform:translateX(150px)}}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-6px)}}
+@keyframes mark{0%,34%{opacity:0}38%,64%{opacity:1}68%,100%{opacity:0}}
+@keyframes bub{0%,38%{opacity:0;transform:translateY(6px)}42%,64%{opacity:1;transform:none}68%,100%{opacity:0}}
+@keyframes done{0%,66%{opacity:0;transform:translateY(8px)}70%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes xp{0%,72%{width:40%}82%,100%{width:72%}}
+@keyframes plus{0%,72%{opacity:0;transform:none}76%{opacity:1}92%,100%{opacity:0;transform:translateY(-40px)}}
+@media (prefers-reduced-motion:reduce){.pet,.pet img,.mark,.bubble,.done,.xpb div,.plus{animation:none}.mark,.bubble,.done{opacity:1}}
+@media (max-width:800px){.hero{grid-template-columns:1fr}}
+@media (max-width:800px){main{grid-template-columns:1fr}.badges{grid-template-columns:1fr}header{padding:0 16px}main,.hero{padding-left:16px;padding-right:16px}.week{gap:4px}}
 </style></head><body>
 <header><img src="logovo.png" alt=""><span class="logo">ЛОГОВО</span>
 <span class="stage">профиль в Логове · обновлено 2026-09-26</span></header>
+<section class="hero">
+<div>
+<h1>Revan прокачивает жизнь <em>как персонажа в MMO</em></h1>
+<p>Обычные дела — касса, учёба, спорт — становятся дейликами, как в WoW. За каждый закрытый дейлик — опыт, уровни и значки. А на рабочем столе живёт питомец, который зовёт делать дела.</p>
+<div class="steps">
+<div><b>1</b>Питомец зовёт: «Новое задание!»</div>
+<div><b>2</b>Сделал дело — отметил в журнале</div>
+<div><b>3</b>Опыт растёт, друзья видят прогресс здесь</div>
+</div>
+<a class="want" href="https://t.me/oldbiba228" target="_blank" rel="noopener">Хочу такого же питомца</a>
+</div>
+<div class="scene" role="img" aria-label="Питомец Логова на рабочем столе: подходит, зовёт выполнить задание, за выполнение даёт опыт">
+<div class="win"><i style="top:40px;width:70%"></i><i style="top:60px;width:50%"></i><i style="top:80px;width:62%"></i><i style="top:100px;width:40%"></i></div>
+<div class="done"><b>✓ Задание выполнено</b><span>Поиграть в HotS</span><div class="xpb"><div></div></div></div>
+<div class="plus">+250 опыта</div>
+<div class="pet"><div class="mark">!</div><div class="bubble">Новое задание: Поиграть в HotS</div><img src="logovo.png" alt=""></div>
+<div class="bar2"></div>
+</div>
+</section>
 <main>
 <section class="card me">
 <img src="logovo.png" alt="Волчица Логова">
